@@ -7,12 +7,10 @@ Created on Thu Oct 11 17:57:27 2018
 """
 
 import numpy as np
-from matplotlib.mlab import griddata
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import*
 import os
 from decimal import Decimal
-from matplotlib.mlab import griddata
 from matplotlib import colors
 import csv
 import pandas as pd
@@ -1450,15 +1448,15 @@ y_ax = [1e-10**(2./7.),1**(2./7.)]
 plt.figure(1)
 plt.plot(results_car[0:11,0],results_car[0:11,2],'-o',label="Cartesian",color='indianred')
 plt.plot(results[0:11,0],results[0:11,2],'-o',label="Axisymmetric",color='steelblue')
-plt.plot(x,y_car,color='k',linestyle=':')
+plt.plot(x,y_car,color='k',linestyle=':', label='Power law')
 plt.plot(x,y_ax,color='k',linestyle=':')
 
 plt.loglog()
 plt.xlim([1e-6,1])
 plt.ylim([1e-2,1.5])
-plt.text(.5,.95,"$\mu_{\mathrm{m}}'=0$",
-        horizontalalignment='center',
-        transform=ax.transAxes)
+#plt.text(.5,.95,"$\mu_{\mathrm{m}}'=0$",
+#        horizontalalignment='center',
+#        transform=ax.transAxes)
 plt.xlabel('Topography diffusivity $D_{\mathrm{u}}$')
 plt.legend()
 plt.ylabel('CMB coverage $\phi_{\mathrm{u}}$')
